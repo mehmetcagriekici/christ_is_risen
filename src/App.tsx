@@ -25,7 +25,7 @@ export default function App() {
   function animate() {
     setCurrentToggleIndex((i) => (i + 1) % 2);
     if (currentToggleIndex % 2 !== 0)
-      setCurrentTranslationIndex((i) => (i + 1) % (translations.length * 2));
+      setCurrentTranslationIndex((i) => (i + 1) % translations.length);
   }
 
   //set the interval
