@@ -19,7 +19,7 @@ export function useInterval(callback: () => void, delay: number) {
     }
 
     if (delay !== null) {
-      const id = setInterval(tick, delay * 1000 * 2);
+      const id = setInterval(tick, delay * 1000 * 1.5);
       return () => clearInterval(id);
     }
   }, [delay]);
