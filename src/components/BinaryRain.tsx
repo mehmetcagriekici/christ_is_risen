@@ -23,7 +23,8 @@ export default function BinaryRain({ bits, binaryIndex }: BinaryRainProps) {
 
   return (
     <div className="absolute inset-0 z-0 overflow-hidden">
-      <div className="flex justify-center h-full w-full">
+      {/*unmount re-mount every single binaryIndex update, re-animate*/}
+      <div className="flex justify-center h-full w-full" key={binaryIndex}>
         {drops.map((drop, i) => {
           return (
             <motion.div
@@ -37,7 +38,7 @@ export default function BinaryRain({ bits, binaryIndex }: BinaryRainProps) {
                 ease: "easeIn",
               }}
             >
-              <motion.div
+              <motion.span
                 key={i}
                 initial={{ opacity: 1 }}
                 animate={{ opacity: 0 }}
@@ -47,7 +48,7 @@ export default function BinaryRain({ bits, binaryIndex }: BinaryRainProps) {
                 }}
               >
                 {drops[i].bit}
-              </motion.div>
+              </motion.span>
             </motion.div>
           );
         })}
